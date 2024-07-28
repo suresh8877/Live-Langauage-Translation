@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+  
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Translate</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  </head>
+
+
+  <body>
+
+    <nav class="navbar navbar-expand-lg" style="background-color: #6999f3;font-size: 20px;font-weight: bold;">
+        <div class="container-fluid">
+          <a class="navbar-brand" style="color: navy;font-size: 25px;">SK Translate</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Convert to
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" onclick="enr()">English</a></li>
+                  <li><a class="dropdown-item" onclick="hir()">Hindi</a></li>
+                  <li><a class="dropdown-item" onclick="mrr()">Marathi</a></li>
+                  <li><a class="dropdown-item" onclick="rur()">Russian</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">About</a>
+              </li>  
+            </ul>
+          </div>
+        </div>
+      </nav>
+    
+    <div style="height: 100px;background-color: greenyellow;">
+    <h1 style="text-decoration: underline;text-decoration-color: brown;;text-align: center;padding-top:18px;color: rgb(240, 11, 61);height: 90px;font-size: 45px;vertical-align: middle;">Translate Languages</h1>
+    </div>
+
+    <div style="background-color: blanchedalmond;height: 485px;">
+    <div style="padding-top: 40px;height: 150px;display: flex;justify-content: space-evenly;padding-left: 200px;padding-right: 200px;">
+      <input style="height: 50px;display:none" id="sor" type="text" >
+      <div class="sourcebtn">
+        <a class="btn btn-secondary dropdown-toggle" style="height: 40px;width:200px" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="true">
+          <h><span id="select"></span></h>
+        </a>
+      
+        <ul class="dropdown-menu" style="height: 200px;overflow-y: scroll;" aria-labelledby="dropdownMenuLink">
+          <li><a class="dropdown-item" onclick="au()" value="auto">Auto</a></li>
+          <li><a class="dropdown-item" onclick="en()" value="en">English</a></li>
+          <li><a class="dropdown-item" onclick="hi()" value="hi">Hindi</a></li>
+          <li><a class="dropdown-item" onclick="mr()" value="mr">Marathi</a></li>
+          <li><a class="dropdown-item" onclick="ru()" value="ru">Russian</a></li>
+          <li><a class="dropdown-item" onclick="ar()" value="ar">Arabic</a></li>
+          <li><a class="dropdown-item" onclick="ko()" value="ko">Korean</a></li>
+          <li><a class="dropdown-item" onclick="fr()" value="fr">French</a></li>
+          <li><a class="dropdown-item" onclick="Jp()" value="Jp">Japanese</a></li>
+          <li><a class="dropdown-item" onclick="de()" value="de">German</a></li>
+          <li><a class="dropdown-item" onclick="gu()" value="gu">Gujarati</a></li>
+          <li><a class="dropdown-item" onclick="it()" value="it">Italian</a></li>
+          <li><a class="dropdown-item" onclick="sr()" value="mr">Serbian</a></li>
+          <li><a class="dropdown-item" onclick="zhCN()" value="zh-CN">Chinese</a></li>
+          <li><a class="dropdown-item" onclick="es()" value="es">Spanish</a></li>
+          <li><a class="dropdown-item" onclick="vi()" value="vi">Vietnamese</a></li>
+        </ul>
+      </div>
+      <h2>==></h2>
+      <button style="height: 50px;width: 200px;border-radius: 4px;font-size: 25px;" id="translatebtn" >Translate</button>     
+      <h2>==></h2>
+      
+      <input style="height: 50px;display: none;" id="tar" type="text">
+      <div class="resultbtn">
+        <a class="btn btn-secondary dropdown-toggle" style="height: 40px;width:200px" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="true">
+          <h><span id="selectr"></span></h>
+        </a>
+        <ul class="dropdown-menu"  style="height: 200px;overflow-y: scroll;" aria-labelledby="dropdownMenuLink">
+          <li><a class="dropdown-item" onclick="enr()" value="en">English</a></li>
+          <li><a class="dropdown-item" onclick="hir()" value="hi">Hindi</a></li>
+          <li><a class="dropdown-item" onclick="mrr()" value="mr">Marathi</a></li>
+          <li><a class="dropdown-item" onclick="rur()" value="ru">Russian</a></li>
+          <li><a class="dropdown-item" onclick="arr()" value="ar">Arabic</a></li>
+          <li><a class="dropdown-item" onclick="kor()" value="ko">Korean</a></li>
+          <li><a class="dropdown-item" onclick="frr()" value="fr">French</a></li>
+          <li><a class="dropdown-item" onclick="Jpr()" value="Jp">Japanese</a></li>
+          <li><a class="dropdown-item" onclick="der()" value="de">German</a></li>
+          <li><a class="dropdown-item" onclick="gur()" value="gu">Gujarati</a></li>
+          <li><a class="dropdown-item" onclick="itr()" value="it">Italian</a></li>
+          <li><a class="dropdown-item" onclick="srr()" value="mr">Serbian</a></li>
+          <li><a class="dropdown-item" onclick="zhCNr()" value="zh-CN">Chinese</a></li>
+          <li><a class="dropdown-item" onclick="esr()" value="es">Spanish</a></li>
+          <li><a class="dropdown-item" onclick="vir()" value="vi">Vietnamese</a></li>
+        </ul>
+      </div>
+    </div>  
+    <div style="display: flex;justify-content: space-evenly;">
+      <div>
+        <textarea id="sourcetext"  style="height: 250px;width: 525px;resize: none;font-size: 25px;" placeholder="Enter the Text" type="text"></textarea>
+      </div> 
+      <div>  
+        <textarea  id="targettext" style="height: 250px;width: 525px;resize: none;font-size: 25px;" placeholder="Translation" type="text"></textarea>
+      </div>
+    </div>
+  </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+  </body>
+
+  <script src="scri.js"></script>
+  <script src="config.js"></script>
+
+  </html>
+  
+
+<!-- Author-Suresh Kumavat -->
+<!-- CodeClause Intern ID- CC35789 -->
+<!-- Designation- Web Development Intern -->
+<!-- Batch- Jul 2023 -->
